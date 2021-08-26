@@ -1,5 +1,5 @@
 # KnowAboutMe Quiz CLI
-#### It's a cli based app for KnowAboutMe quiz built using `nodejs`.
+#### It's a cli based app for KnowAboutMe quiz built using `javascript`.
 ### `npm` packages used
 - ``chalk`` for stying terminal text.
 - ``node-localstorage`` for adding localStorage functionality in nodejs.
