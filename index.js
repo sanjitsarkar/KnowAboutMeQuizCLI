@@ -1,6 +1,12 @@
 const readlineSync = require('readline-sync')
+
+//chalk package for styling terminal text
 const chalk = require('chalk')
+
+//For localStorage functionality in node.js using text file
 const {LocalStorage} = require('node-localstorage')
+
+//Styling for terminal text by chalk
 const error = chalk.bold.red;
 const success = chalk.keyword('green');
 const title = chalk.keyword('teal').bold;
@@ -16,7 +22,7 @@ let highScores = [];
 let userName = ""
 
 
-
+//If the highScores.txt file is not created or has empty data
 if(highScoreItem===null || highScoreItem==="")
 {
   localStorage.setItem("highScores",highScores)
@@ -26,7 +32,7 @@ highScores = JSON.parse(highScoreItem)
 
 }
 
-
+//Method to get your current highest score
 const getYourHighScore = (userName) => {
  highScoreItem = localStorage.getItem("highScores")
  if(highScoreItem==="")
@@ -41,12 +47,14 @@ const getYourHighScore = (userName) => {
  }
 }
 
+//Function to get the top scorer with score and username.
 const getHighestScore = () => {
 highScoreItem = localStorage.getItem("highScores")
 
 return JSON.parse(highScoreItem).reduce((a,b)=>a.score>b.score?a:b); 
 }
 
+//To update the highest score for a particular user.
 const updateHighScore = (userName)=>{
 highScoreItem = localStorage.getItem("highScores")
 
